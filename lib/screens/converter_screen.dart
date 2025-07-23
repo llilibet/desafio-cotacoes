@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ConverterScreen extends StatefulWidget {
   final Map<String, dynamic> rates;
 
-  // Recebemos o mapa de cotações da tela anterior
+  // Recebe o mapa de cotações da tela anterior
   const ConverterScreen({super.key, required this.rates});
 
   @override
@@ -64,7 +64,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
             ),
             const SizedBox(height: 20),
 
-            // Linha com os dois menus de seleção e o botão de inverter
+            // menus de seleção e o botão de inverter
             Row(
               children: [
                 Expanded(child: _buildCurrencyDropdown(isFrom: true)),
@@ -102,7 +102,6 @@ class _ConverterScreenState extends State<ConverterScreen> {
     );
   }
 
-  // Widget auxiliar para construir os Dropdowns
   Widget _buildCurrencyDropdown({required bool isFrom}) {
     return DropdownButton<String>(
       value: isFrom ? _fromCurrency : _toCurrency,

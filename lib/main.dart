@@ -36,19 +36,16 @@ class _HomePageState extends State<HomePage> {
       {}; // Guarda a lista filtrada para exibição
   String? _errorMessage;
 
-  // Controlador para o campo de pesquisa
+  // campo de pesquisa
   final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    // Adiciona um "ouvinte" para o campo de texto.
-    // A função _filterCurrencies será chamada toda vez que o texto mudar.
     _searchController.addListener(_filterCurrencies);
     _getRates();
   }
 
-  // Não se esqueça de limpar o controlador ao sair da tela
   @override
   void dispose() {
     _searchController.dispose();
@@ -72,7 +69,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // Função que faz a mágica do filtro
+  // função que faz a mágica do filtro
   void _filterCurrencies() {
     final query = _searchController.text.toLowerCase();
     setState(() {
@@ -89,10 +86,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cotações em USD'),
-        // O botão antigo foi removido daqui.
-      ),
+      appBar: AppBar(title: const Text('Cotações em USD')),
       body: Column(
         children: [
           Padding(
@@ -109,10 +103,9 @@ class _HomePageState extends State<HomePage> {
           Expanded(child: _buildBody()),
         ],
       ),
-      // AQUI ADICIONAMOS O NOVO BOTÃO FLUTUANTE
+      // botão flutuante
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          // A lógica de navegação é a mesma de antes.
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -127,7 +120,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // O _buildBody agora só precisa se preocupar em construir a lista
   Widget _buildBody() {
     if (_isLoading) {
       return const Center(child: CircularProgressIndicator());
@@ -184,7 +176,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // Parte 2: Função auxiliar para a bandeira
+  // função auxiliar para as bandeiras
   Widget _buildFlag(String currencyCode) {
     // Lista de códigos de 3 letras que não correspondem a países de 2 letras
     const nonCountryCodes = {

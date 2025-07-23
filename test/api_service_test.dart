@@ -1,16 +1,10 @@
-// test/api_service_test.dart
-
-// 1. VERIFIQUE SE O NOME 'cotacoes' ESTÁ CORRETO AQUI
 import 'package:cotacao/services/api_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
-// 2. ESTE IMPORT VAI DAR ERRO POR ENQUANTO, É NORMAL
 import 'api_service_test.mocks.dart';
 
-// 3. GARANTA QUE ESTA ANOTAÇÃO ESTÁ EXATAMENTE ASSIM
 @GenerateMocks([http.Client])
 void main() {
   group('fetchRates', () {
