@@ -7,7 +7,7 @@ class DetailsScreen extends StatelessWidget {
   final String currencyCode;
   final double rate;
 
-  // O construtor recebe os dados da moeda que foi tocada. [cite: 26]
+  // O construtor recebe os dados da moeda que foi tocada.
   const DetailsScreen({
     super.key,
     required this.currencyCode,
@@ -40,6 +40,9 @@ class DetailsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
+              // O desafio menciona a data[cite: 26]. Nossa API atual não nos dá uma data
+              // por moeda, mas podemos exibir a data da última atualização da API.
+              // Deixaremos isso como um ponto para melhoria futura!
               Text(
                 'Cotação referente à última atualização da API.',
                 style: Theme.of(context).textTheme.bodySmall,
