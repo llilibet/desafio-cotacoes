@@ -29,9 +29,22 @@ O aplicativo consome os dados da **Exchange Rate-API**.
 1.  Clone este repositório.
 2.  Garanta que o Flutter SDK esteja instalado e configurado em sua máquina.
 3.  Abra a pasta do projeto no seu terminal.
-4.  Execute o comando `flutter pub get` para baixar as dependências.
-5.  Execute o comando `flutter run` para iniciar o aplicativo em um emulador ou dispositivo físico. 
+4.  Execute o comando para baixar as dependências:
+   
+```bash
+flutter pub get
+```
+
+6.  Execute o comando para iniciar o aplicativo em um emulador ou dispositivo físico: 
+
+```bash
+flutter run
+```
 
 ## Testes
 Para rodar os testes unitários, execute o comando:
-`flutter test`
+
+```bash
+flutter test
+```
+
